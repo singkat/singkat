@@ -13,7 +13,7 @@ func main() {
 	mux.Use(cors.New())
 
 	mux.Post("links", handler.PostLinks)
-
+	mux.Get("/", handler.RedirectLink)
 	err := mux.Listen(":3001")
 	if err != nil {
 		os.Exit(1)
